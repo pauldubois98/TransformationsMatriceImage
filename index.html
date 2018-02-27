@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Les matrices de transformation</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <head>
+            <h1><em>Les <strong>matrices</strong>:</em><br>
+                Applications aux transformations d'images</h1>
+        </head>
+        <section id="def">
+            <p class="article">Les matrices sont des objets mathématiques que l'on peut définir simplement comme des "tableaux de nombres". La plupart des opérations standard sur des nombres réels ont une équivalence pour les matrices:</p>
+            <ul>
+                <li class="article"><strong>Addition</strong>: on ajoute un à un tous les nombres des deux matrices<br>
+                        => La <em>matrice nulle</em> est le "0"</li>
+                <li class="article"><strong>Multiplication</strong>: procédé plus complexe<br>
+                        => La <em>matrice identité</em> ( I ) est le "1"</li>
+            </ul>        
+            <p class="article">On peut aussi multiplier les matrices par des vecteurs, ce qui donne un autre vecteur.</p>
+            <p class="article">Dans un repère cartésien, les points peuvent être représentés par des vecteur, appelé vecteur position. Pour effectuer une transformation, il est donc possible de multiplier tous les vecteurs position des points d'une image par une même matrice. Il se trouve que cette méthode marche très bien, c'est à dire que pour effectuer une transformation d'image donnée, on peut facilement trouver la matrice correspondante.</p>
+            <p class="article">Comme on <strong>multiplie</strong> les vecteurs position des points par une matrice, il est logique que la <em> matrice identité </em> n'effectue aucune transformation sur l'image.</p>
+            <p class="article">L'opération effectuée par l'ordinateur lrosqu'on lui donne une matrice est simple: il divise la matrice 2*3 en une 2*2 et un vecteur comme le montre la figure suivante:</p>
+            <img src="calcul.jpg" alt="division matrice" id="calcul" class="article">
+            <p class="article">Pour chaque vecteur position <span class="vect">r</span> il fait l'opération <span class="vect">r'</span> = <span id="A">A</span> * <span class="vect">r</span> + <span id="a">a</span>. Les vecteurs positions <span class="vect">r'</span> définissent la nouvelle image.</p>
+            <p style="text-align: center">Entrez ici une matrice pour voir quelle transformation elle effectue sur une image:</p>
+        </section>
+        <section id="commandes">
+            <form>
+                <label>Matrice:<br></label>
+                <input type="number" class="matrix" value="1" id='m11'/><input type="number" class="matrix" value="0" id='m12'/><input type="number" class="matrix" value="0" id='m13'/><br>
+                <input type="number" class="matrix" value="0" id='m21'/><input type="number" class="matrix" value="1" id='m22'/><input type="number" class="matrix" value="0" id='m23'/><br>
+            </form>
+            <div>
+                <button id="raz">RAZ</button>
+                <button id="ident">Identité</button>
+                <button id="appl">Appliquer</button><br>
+                <button id="change">Changer d'image</button>                
+            </div>
+        </section>
+
+        <section>
+            <img src="montagne.jpg" alt="essai" id="image">
+        </section>
+        <footer>
+            <div id="blanc"></div>
+        </footer>
+
+
+
+    </body>
+
+
+    <script src="script.js"></script>
+
+</html>
